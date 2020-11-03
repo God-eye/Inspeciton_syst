@@ -282,14 +282,14 @@ def evaluate(test, typ):
         flag = 1
     
     if flag:
-      fle.write(typ)
+      fle.write('true')
       print('detected anomaly')    
     # if (sr<=0.96).any() or (sr<=0.96).all():
     #   fle.write(typ)
     #   print('detected anomaly')
 
     else:
-      fle.write('Normal')
+      fle.write('false')
       print('Normal')
     
     fle.close()
@@ -374,7 +374,7 @@ def test(test_path):
 
 if __name__ == '__main__':
   model_path = 'model_weights/tpu_model.h5'
-  result_pth = 'result/text.txt'
+  result_pth = 'result/anomaly.txt'
   test_path = 'Test'
   cnfg = Config(test_path, model_path,result_pth, tst_seq = 300)
   fncn = Functions()
