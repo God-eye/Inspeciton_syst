@@ -1,7 +1,7 @@
 .maingrid {
   display: grid;
   /* grid-template-rows: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: 1fr 1fr 1.3fr;
   row-gap: 5rem;
   column-gap: 5rem;
   grid-auto-rows: minmax(10px, auto);
