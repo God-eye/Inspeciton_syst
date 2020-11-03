@@ -10,13 +10,13 @@ function App() {
       <URLContextProvider>
         <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/setvid">
               <BtnGrp />
             </Route>
             <Route exact path="/home">
               <Pg2layout />
             </Route>
-            <Route exact path="/test">
+            <Route exact path="/">
               <NewURLpage />
             </Route>
           </Switch>

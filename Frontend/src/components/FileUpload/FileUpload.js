@@ -5,15 +5,18 @@ class FileUploader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageURL: "",
+      videoName: "",
     };
   }
+  handlevideoname = (e) => {
+    this.setState({ videoName: e.target.value });
+  };
 
   render() {
     return (
       <URLContext.Consumer>
         {(context) => {
-          const { PythonURL } = context;
+          const { PythonURL, setVideoURL, setVideoName } = context;
           const handleUploadVideo = (ev) => {
             ev.preventDefault();
 
@@ -24,21 +27,19 @@ class FileUploader extends React.Component {
             fetch(`${PythonURL}/api/fileUpload`, {
               method: "POST",
               body: data,
-            }).then(() => {
-              window.open(`${PythonURL}/home`, "_self");
+            }).then((response) => {
+              response.json().then(
+                (body) => (
+                  setVideoURL(
+                    `https://t.zerxbot.workers.dev/0:/${body.filename}`,
+                    () => {
+                      window.open(`${PythonURL}/home`, "_self");
+                    }
+                  ),
+                  setVideoName(body.filename)
+                )
+              );
             });
-            // .then((response) => {
-            //   response.json().then((body) => {
-            //     this.setState(
-            //       {
-            //         imageURL: `${PythonURL}/api/video/${body.filename}`,
-            //       },
-            //       () => {
-            //         console.log(`uplaod completed`);
-            //       }
-            //     );
-            //   });
-            // });
           };
           return (
             <form onSubmit={handleUploadVideo}>
@@ -57,6 +58,7 @@ class FileUploader extends React.Component {
                   }}
                   type="text"
                   placeholder="Enter the desired name of file"
+                  onChange={this.handlevideoname}
                 />
               </div>
               <br />

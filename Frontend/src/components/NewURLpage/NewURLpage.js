@@ -13,10 +13,11 @@ export class NewURLpage extends Component {
     return (
       <URLContext.Consumer>
         {(context) => {
-          const { setPythonURL } = context;
+          const { PythonURL, setPythonURL } = context;
           const formSubmit = (a) => {
             a.preventDefault();
             setPythonURL(this.state.value);
+            window.open(`${PythonURL}/setvid`, "_self");
           };
           return (
             <form onSubmit={formSubmit}>
