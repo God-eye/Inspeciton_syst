@@ -373,7 +373,7 @@ def test(test_path):
   fle.close()
 
 if __name__ == '__main__':
-  model_path = 'model_weights/anomaly_detect.h5'
+  model_path = 'model_weights/tpu_model.h5'
   result_pth = 'result/text.txt'
   test_path = 'Test'
   cnfg = Config(test_path, model_path,result_pth, tst_seq = 300)
@@ -383,7 +383,7 @@ if __name__ == '__main__':
   model = mdl.anom()
   model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=1e-4, decay=1e-5, epsilon=1e-6))
   try:
-    model.load_weights('model_weights/anomaly_detect.h5')
+    model.load_weights(model_path)
     print('Model loaded successfuly')
   except:
     print("couldn't load the weights")
