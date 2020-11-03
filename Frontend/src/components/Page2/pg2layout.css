@@ -1,0 +1,57 @@
+.maingrid {
+  display: grid;
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  row-gap: 5rem;
+  column-gap: 5rem;
+  grid-auto-rows: minmax(10px, auto);
+  grid-template-areas:
+    "header header header"
+    "play play info "
+    "anom norm info";
+}
+.normal {
+  grid-area: norm;
+  align-self: center;
+  justify-self: center;
+}
+.anamoly {
+  grid-area: anom;
+  align-self: center;
+  justify-self: center;
+}
+.player {
+  grid-area: play;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+}
+.info_ {
+  display: grid;
+  grid-area: info;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.carasole {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-color: blue;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.time {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: chartreuse;
+
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

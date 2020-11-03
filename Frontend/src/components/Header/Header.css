@@ -1,0 +1,15 @@
+.iris-header {
+    display: grid;
+    grid-area: header; 
+}
+
+.iris-header-title{
+    color: #e5e5e5;
+    text-align: center;
+    font-size: 200%;
+    margin: 0px;
+}
+
+.iris-header-desc {
+    color: #cccccc;
+}
