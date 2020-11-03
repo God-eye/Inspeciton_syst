@@ -1,0 +1,33 @@
+.temp {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap:5rem;
+    grid-template-areas:
+    "header header header"
+    ". vid . "
+    ". up .";
+}
+  
+.video_btn{
+    display:grid;
+    grid-area: vid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:"red green";
+    grid-gap: 1.5rem;
+}
+.uploadshow{
+  grid-area: red;
+  align-self: center;
+  justify-self: center;
+}
+.greenbutton1{
+  grid-area: green;
+  align-self: center;
+  justify-self: center;
+}
+.upload{
+  grid-area: up;
+  align-self: center;
+  justify-self: center;
+}

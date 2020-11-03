@@ -1,0 +1,85 @@
+:root {
+  --primary: #ffffff;
+  --bgcolor: #fff;
+  --text-color: #fff;
+  --color-green: #00ff00;
+  --color-red: #ff0000;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #242424;
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3 ease-out;
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  font-size: 20px;
+}
+
+.btn--large {
+  padding: 12px 26px;
+  font-size: 20px;
+}
+
+.btn--outline:hover {
+  background-color: var(--bgcolor);
+  color: #242424;
+  transition: all 0.3 ease-out;
+}
+
+.btn--red-primary {
+  background-color: var(--color-red);
+  color: #242424;
+  border: 1px solid var(--primary);
+}
+
+.btn--red-outline {
+  background-color: transparent;
+  color: var(--color-red);
+  padding: 8px 20px;
+  border: 1px solid var(--color-red);
+  transition: all 0.3 ease-out;
+}
+
+/* Change with change in state */
+.btn--red-outline:hover {
+  background-color: var(--color-red);
+  color: #242424;
+  transition: all 0.3 ease-out;
+}
+
+.btn--green-primary {
+  background-color: var(--color-green);
+  color: #242424;
+  border: 1px solid var(--primary);
+}
+
+.btn--green-outline {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 8px 20px;
+  border: 1px solid var(--color-green);
+  transition: all 0.3 ease-out;
+}
+.btn--green-outline:hover {
+  background-color: var(--color-green);
+  color: #242424;
+  transition: all 0.3 ease-out;
+}
