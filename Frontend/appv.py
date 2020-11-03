@@ -39,21 +39,6 @@ def fileUpload():
     elif request.method == "GET":
         return jsonify("API is ready for a file upload!!")
 
-def getvideo(vidpath):
-    video= cv2.VideoCapture(vidpath)
-    while(video.isOpen):
-        ret,frame = video.read()
-        if not ret:
-            yield({'currFrame':frame, 'status':200, 'anamoly':False})
-        else:
-            break
-    video.close()
-
-@app.route('/api/video_feed/<vidname>')
-def video_feed(vidname):
-    return Response(getvideo(vidname),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
-
 
 @app.route('/api/setanamoly', methods=["GET"])
 def setanamolies():
