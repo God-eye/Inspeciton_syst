@@ -41,7 +41,7 @@ class Config():
 ##################### Class Preprocessing Functions ###########################################
 class Functions(Config):
   def __init__(self):
-    Config.__init__(self, train_path, test_path, model_path,result_pth)
+    Config.__init__(self, test_path, model_path,result_pth)
 
     # load buffer :- frm_cnt : stores the no of frames already loaded of the current video (None represents end of current video)
     #                indx : stores the indx of the video which is being processed / being loaded
@@ -338,8 +338,8 @@ def test(test_path):
     frames = []
     vid = cv2.VideoCapture(tst_pth)
     n = 0
-    p0 = Process(target = play2, args = ([tst_pth]) )
-    p0.start()
+    # p0 = Process(target = play2, args = ([tst_pth]) )
+    # p0.start()
     
     while vid.isOpened():
       ret, frame = vid.read()
@@ -358,7 +358,7 @@ def test(test_path):
         evaluate(frames,temp)
         # n = 0
         frames =[]
-    p0.join()
+    # p0.join()
     vid.release()
     cv2.destroyAllWindows()
   while True:
@@ -374,16 +374,16 @@ def test(test_path):
 
 if __name__ == '__main__':
   model_path = 'model_weights/anomaly_detect.h5'
-  result_pth = 'IRIS_WEB/IRIS-backend/public/text_files/text.txt'
+  result_pth = 'result/text.txt'
   test_path = 'Test'
   cnfg = Config(test_path, model_path,result_pth, tst_seq = 300)
   fncn = Functions()
   mdl = Model()
   img_dim = (128, 128)
   model = mdl.anom()
-  model.compile(loss='mse',experimental_steps_per_execution = 50, optimizer=tf.keras.optimizers.Adam(lr=1e-4, decay=1e-5, epsilon=1e-6))
+  model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=1e-4, decay=1e-5, epsilon=1e-6))
   try:
-    model.load_weights('Model/tpu_model.h5')
+    model.load_weights('model_weights/anomaly_detect.h5')
     print('Model loaded successfuly')
   except:
     print("couldn't load the weights")
