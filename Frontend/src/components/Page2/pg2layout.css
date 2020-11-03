@@ -39,7 +39,7 @@
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 4;
-  background-color: blue;
+  /* background-color: blue; */
   position: relative;
   height: 100%;
   width: 100%;
@@ -49,7 +49,7 @@
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: chartreuse;
+  /* background-color: chartreuse; */
 
   position: relative;
   height: 100%;

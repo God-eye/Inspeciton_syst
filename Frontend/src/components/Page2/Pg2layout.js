@@ -11,11 +11,15 @@ export const Pg2layout = () => {
   const [hidden, sethidden] = useState("none");
   const [timerstart, settimerstart] = useState(0);
   const [carasolehide, setcarasolehide] = useState("block");
+  const [frezze, setfrezze] = useState(1);
 
   const hiddenStateChanger = () => {
     sethidden("block");
     settimerstart(1);
     setcarasolehide("none");
+  };
+  const frezzeswitch = () => {
+    setfrezze(0);
   };
 
   return (
@@ -59,8 +63,10 @@ export const Pg2layout = () => {
                 </Button>
               </div>
               <div className="time" style={{ display: hidden }}>
+              An anomaly has been detected. An email will be sent to the corresponding authorities in:
+
                 {timerstart ? (
-                  <Timer initialMinute={timerstart} />
+                  <Timer initialMinute={timerstart} frez = {frezze} />
                 ) : (
                   <div></div>
                 )}
@@ -69,8 +75,9 @@ export const Pg2layout = () => {
                   buttonStyle="btn--red-outline"
                   buttonSize="btn--large"
                   gridClass="timerstop"
+                  onClick = {frezzeswitch}
                 >
-                  Stop Timer
+                  Disable Email Service
                 </Button>
               </div>
             </div>
