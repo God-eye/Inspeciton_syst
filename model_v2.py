@@ -363,7 +363,7 @@ def test(test_path):
     cv2.destroyAllWindows()
   while True:
     try:
-      fle = open(cnfg.resul_pth, 'w')
+      fle = open(cnfg.result_pth, 'w')
       break
     except:
       time.sleep(0.001)
