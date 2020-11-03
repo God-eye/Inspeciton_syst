@@ -374,7 +374,7 @@ def test(test_path):
 
 if __name__ == '__main__':
   model_path = 'model_weights/tpu_model.h5'
-  result_pth = 'result/anomaly.txt'
+  result_pth = 'Frontend/anamoly.txt'
   test_path = 'Test'
   cnfg = Config(test_path, model_path,result_pth, tst_seq = 300)
   fncn = Functions()
