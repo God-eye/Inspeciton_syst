@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = './data/'
 CORS(app, expose_headers='Authorization')
 
 # Falsk uploadfunction requirements
-UPLOAD_FOLDER = './data'
+UPLOAD_FOLDER = '.'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
@@ -26,7 +26,7 @@ def index():
 @app.route("/api/fileUpload", methods=["GET", "POST"])
 def fileUpload():
     if request.method == "POST":
-        target = os.path.join(UPLOAD_FOLDER, 'videos')
+        target = UPLOAD_FOLDER
         if not os.path.isdir(target):
             os.mkdir(target)
         file = request.files['file']
