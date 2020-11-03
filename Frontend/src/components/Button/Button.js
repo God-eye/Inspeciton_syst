@@ -2,11 +2,19 @@ import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 
-const STYLES = ["btn--primary", "btn--outline", "btn--red-primary", "btn--green-primary","btn--red-outline", "btn--green-outline"];
+const STYLES = [
+  "btn--primary",
+  "btn--outline",
+  "btn--red-primary",
+  "btn--green-primary",
+  "btn--red-outline",
+  "btn--green-outline",
+];
 
 const SIZES = ["btn--medium", "btn--large"];
 
 export const Button = ({
+  destinationLink = "#",
   children,
   type,
   id,
@@ -23,13 +31,13 @@ export const Button = ({
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <Link to="#" className={`btn-mobile ${gridClass}`}>
+    <Link to={destinationLink} className={`btn-mobile ${gridClass}`}>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize} `}
         id={id}
         onClick={onClick}
         type={type}
-        style = {hidebtn}
+        style={hidebtn}
       >
         {children}
       </button>

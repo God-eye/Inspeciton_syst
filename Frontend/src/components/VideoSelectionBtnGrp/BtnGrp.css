@@ -31,3 +31,11 @@
   align-self: center;
   justify-self: center;
 }
+
+.fileuploaderbutton {
+  grid-area: up;
+  align-self: center;
+  justify-self: center;
+}
+
+

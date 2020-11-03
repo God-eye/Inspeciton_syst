@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import { Button } from "../Button/Button";
+import FileUploader from "../FileUpload/FileUpload";
 import { Header } from "../Header/Header";
 import "./BtnGrp.css";
 
@@ -20,7 +21,7 @@ export const BtnGrp = () => {
           gridClass="uploadshow"
           onClick = {stateChanger}
         >
-          Home
+          Upload a File
         </Button>
         <Button
           id="greenbutton"
@@ -28,18 +29,12 @@ export const BtnGrp = () => {
           buttonSize="btn--large"
           gridClass="greenbutton1"
         >
-          Home
+          Demo
         </Button>
       </div>
-      <Button
-        id="temp"
-        buttonStyle="btn--red-outline"
-        buttonSize="btn--large"
-        gridClass="upload"
-        hidebtn = {{display:hiddenupload}}
-      >
-        Home
-      </Button>
+      <div className='fileuploaderbutton' style={{display:hiddenupload}}>
+      <FileUploader />
+      </div>
     </div>
   );
 };
