@@ -14,9 +14,7 @@ export const Pg2layout = () => {
   const [frezze, setfrezze] = useState(1);
 
   const hiddenStateChanger = () => {
-    sethidden("block");
     settimerstart(1);
-    setcarasolehide("none");
   };
   const frezzeswitch = () => {
     setfrezze(0);
@@ -33,7 +31,7 @@ export const Pg2layout = () => {
               <VideoJs color={(isAnamoly === "false")?"green":"red"} />
             </div>
 
-            <Button
+            {/* <Button
               id="greenbutton"
               buttonStyle="btn--red-outline"
               buttonSize="btn--large"
@@ -48,7 +46,7 @@ export const Pg2layout = () => {
               gridClass="anamoly"
             >
               Home
-            </Button>
+            </Button> */}
 
             <div className="info_">
               <div className="carasole" style={{ display: carasolehide }}>
@@ -61,6 +59,9 @@ export const Pg2layout = () => {
                 >
                   start
                 </Button>
+                {(isAnamoly === "false")?sethidden('none'):sethidden('Block')}
+                {/* {(isAnamoly === "false")?settimerstart(0):settimerstart(1)} */}
+                {/* {(isAnamoly === "false")?setcarasolehide('Block'):setcarasolehide('none')} */}
               </div>
               <div className="time" style={{ display: hidden }}>
               An anomaly has been detected. An email will be sent to the corresponding authorities in:

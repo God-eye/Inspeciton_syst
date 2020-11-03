@@ -15,7 +15,7 @@ CORS(app, expose_headers='Authorization')
 
 # Falsk uploadfunction requirements
 UPLOAD_FOLDER = '.'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['mp4'])
 
 
 @app.route('/api', methods=["GET"])
