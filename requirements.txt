@@ -1,0 +1,7 @@
+keras
+numpy
+matplotlib
+tqdm
+tensorflow
+keras
+pprint
