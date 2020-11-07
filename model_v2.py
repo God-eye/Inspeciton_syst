@@ -57,7 +57,7 @@ class Functions(Config):
     clips = []
     a = 0
     q = 0
-    for dir in tqdm(os.walk(train_path)):
+    for dir in tqdm(os.walk(self.train_path)):
       # os.walk() returns an array and the first element of the array represents the subdirectories in our main directory and we want to load the files in the subdirectories.
       # So we skip the first iteration.
       a += 1
